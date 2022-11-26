@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="container__header">
+    <div class="back" (click)="back()">
+      <span class="material-icons">arrow_back</span>
+    </div>
+    <div class="avatar">
+      <img src="../../assets/avatar{{id}}.png" alt="">
+    </div>
+    <div class="username">
+      <span>Alberinguis</span>
+    </div>
+    <div class="more">
+      <span class="material-icons">more_vert</span>
+    </div>
+  </div>
+  <div class="container__body" id="content-chat">
+
+    <div class="message" *ngFor="let message of messages">
+      <div class="message-{{message.status}}">
+        <div class="message-{{message.status}}__content">
+          <span>{{message.message}}</span>
+        </div>
+        <div class="message-{{message.status}}__time">
+          <span>{{message.time}}</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="message">
+      <div class="message-sent">
+        <div class="message-sent__content">
+          <span>Kiora Lol</span>
+        </div>
+        <div class="message-sent__time">
+          <span>7:52 a.m</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="message">
+      <div class="message-received">
+        <div class="message-received__content">
+          <span>Kiora Lol</span>
+        </div>
+        <div class="message-received__time">
+          <span>7:53 a.m</span>
+        </div>
+      </div>
+    </div> -->
+
+
+  </div>
+  <div class="container__footer">
+    <div class="text-box">
+      <input type="text" placeholder="Mensaje" [(ngModel)]="message" (keyup.enter)="send()">
+    </div>
+    <div class="send" (click)="send()">
+      <span class="material-icons">send</span>
+    </div>
+  </div>
+</div>

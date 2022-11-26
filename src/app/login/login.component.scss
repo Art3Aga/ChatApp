@@ -1,0 +1,104 @@
+
+.container-fluid {
+  // background-color: rgb(240, 196, 196);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__login {
+    width: 35%;
+    height: 250px;
+    @media (max-width: 1030px) {
+      width: 45%;
+    }
+    @media (max-width: 768px) {
+      width: 85%;
+      height: 200px;
+    }
+
+    &__form {
+      display: grid;
+      row-gap: 60px;
+      h1 {
+        font-style: italic;
+      }
+      input {
+        font-size: 25px;
+        text-transform: capitalize;
+        text-align: center;
+        @media (max-width: 768px) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  &__choose_avatar {
+    padding: 20px;
+    background-color: rgba(200, 254, 200, 0.205);
+    width: 60%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: minmax(auto, 7%) minmax(auto, 30%) minmax(auto, 54%) minmax(auto, 9%);
+
+    &__selected {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    &__avatars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__pool {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(auto, 80px));
+        grid-auto-rows: minmax(auto, 80px);
+        gap: 20px 50px;
+        .avatar {
+          position: relative;
+          transition: .3s;
+          &--selected {
+            opacity: .45;
+          }
+          &:hover {
+            transform: scale(1.15);
+          }
+          span {
+            position: absolute;
+            left: 45px;
+            top: 15px;
+            color: #1479cc;
+            background-color: white;
+            border-radius: 100%;
+            width: fit-content;
+            height: fit-content;
+          }
+          img {
+            height: 100%;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+  }
+
+  button {
+    background-color: #1479cc;
+    //003459
+    //0046c4
+    //179fda
+    //214fa3
+    //008035
+    //48c67c
+    border-color: #1479cc;
+  }
+
+}

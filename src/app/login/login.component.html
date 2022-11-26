@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="container-fluid__login" *ngIf="!showAvatarPool">
+    <div class="container-fluid__login__form">
+      <h1 class="text-center">¿Cúal es tu nombre?</h1>
+      <input
+        type="text"
+        [(ngModel)]="name"
+        class="form-control"
+        (keyup.enter)="navigate('login')"
+      />
+    </div>
+  </div>
+
+  <div class="container-fluid__choose_avatar" *ngIf="showAvatarPool">
+    <h3 class="text-center">{{name}}, elige tu avatar:</h3>
+
+    <div class="container-fluid__choose_avatar__selected">
+      <img [src]="avatarSelected.img" alt="avatar-seleccionado" />
+    </div>
+
+    <div class="container-fluid__choose_avatar__avatars">
+      <div class="container-fluid__choose_avatar__avatars__pool">
+        <div class="avatar" *ngFor="let avatar of avatars; let i = index" (click)="selectAvatar(i)">
+          <img [src]="avatar.img" alt="avatar" [class.avatar--selected]="avatar.selected" />
+          <span *ngIf="avatar.selected" class="material-icons">check_circle</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid__choose_avatar__button d-grid">
+      <button class="btn btn-success" (click)="navigate('avatar')">Guardar</button>
+    </div>
+
+  </div>
+</div>
