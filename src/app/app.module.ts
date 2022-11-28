@@ -10,12 +10,12 @@ import { ChatComponent } from './chat/chat.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 // import { SocketioModule } from 'ngx-socketio2';
-import { environment } from 'src/environments/environment';
+// import { environment } from 'src/environments/environment';
 import { SocketService } from './socket.service';
 
 
 const config: SocketIoConfig = {
-	url: environment.socketUrl, // socket server url;
+	url: 'https://socket-server.herokuapp.com', // socket server url;
 	options: {
 		transports: ['websocket'],
     autoConnect: true
