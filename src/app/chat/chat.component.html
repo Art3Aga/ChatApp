@@ -1,13 +1,13 @@
 <div class="container">
   <div class="container__header">
-    <div class="back" (click)="back()">
+    <!-- <div class="back" (click)="back()">
       <span class="material-icons">arrow_back</span>
-    </div>
+    </div> -->
     <div class="avatar">
-      <img src="../../assets/avatar{{id}}.png" alt="">
+      <img src="../../assets/Logo_UES.jpg" alt="">
     </div>
     <div class="username">
-      <span>Alberinguis</span>
+      <span>Chat General</span>
     </div>
     <div class="more">
       <span class="material-icons">more_vert</span>
@@ -17,6 +17,9 @@
 
     <div class="message" *ngFor="let message of messages">
       <div class="message-{{message.status}}">
+        <div class="message-user">
+          <span>{{message.nombre}}</span>
+        </div>
         <div class="message-{{message.status}}__content">
           <span>{{message.message}}</span>
         </div>
@@ -26,36 +29,12 @@
       </div>
     </div>
 
-
-    <!-- <div class="message">
-      <div class="message-sent">
-        <div class="message-sent__content">
-          <span>Kiora Lol</span>
-        </div>
-        <div class="message-sent__time">
-          <span>7:52 a.m</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="message">
-      <div class="message-received">
-        <div class="message-received__content">
-          <span>Kiora Lol</span>
-        </div>
-        <div class="message-received__time">
-          <span>7:53 a.m</span>
-        </div>
-      </div>
-    </div> -->
-
-
   </div>
   <div class="container__footer">
     <div class="text-box">
-      <input type="text" placeholder="Mensaje" [(ngModel)]="message" (keyup.enter)="send()">
+      <input type="text" placeholder="Mensaje" [(ngModel)]="message" (keyup.enter)="sendMessage()">
     </div>
-    <div class="send" (click)="send()">
+    <div class="send" (click)="sendMessage()">
       <span class="material-icons">send</span>
     </div>
   </div>

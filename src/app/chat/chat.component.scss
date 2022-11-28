@@ -4,17 +4,17 @@
   font-family: 'Montserrat', sans-serif;
   // background-color: rgba(241, 241, 241, 0.189);
   height: 100%;
-  width: 50%;
-  padding-top: 30px;
+  width: 100%;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 2px;
 
   &__header {
     height: 50px;
     display: grid;
-    grid-template-columns: repeat(2, minmax(auto, 40px)) auto minmax(auto, 30px);
+    grid-template-columns: repeat(1, minmax(auto, 40px)) auto minmax(auto, 30px);
     background-color: #006c59;
     color: white;
+    padding-left: 10px;
 
     .back, .avatar, .more {
       display: flex;
@@ -29,6 +29,7 @@
     }
     .avatar {
       img {
+        border-radius: 100%;
         width: 40px;
         height: 40px;
       }
@@ -43,6 +44,10 @@
     background-color: #ece5dd;
     .message {
       display: flow-root;
+    }
+    .message-user {
+      font-size: 10px;
+      font-weight: bold;
     }
     .message-sent {
       box-shadow: -1px 5px 8px -8px rgba(0,0,0,0.47);

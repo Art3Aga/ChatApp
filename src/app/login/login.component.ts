@@ -51,8 +51,10 @@ export class LoginComponent implements OnInit {
     if (currentRoute == 'login') {
       this.showAvatarPool = true;
     } else {
-      this.showAvatarPool = false;
-      this.router.navigate(['/chats'], { state: { name: this.name } });
+      this.socket.login(this.name).then(v => {
+        this.showAvatarPool = false;
+        this.router.navigate(['/chats'], { state: { name: this.name } });
+      });
     }
   }
 

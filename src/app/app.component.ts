@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ChatService } from './chat.service';
+import { SocketService } from './socket.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ChatApp';
+
+  constructor (private socket: SocketService, private chatService: ChatService) {
+    // this.socket.setupSocketConnection()
+  }
 }

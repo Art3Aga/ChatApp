@@ -5,24 +5,26 @@
   <div class="container__phone">
 
     <div class="container__phone__header">
-      <h3>Chats</h3>
+      <h3>Online</h3>
       <div class="profile">
-        <img src="../../assets/avatar1.png" alt="person">
+        <img src="../../assets/avatar1.png" alt="person" (click)="logout()">
       </div>
     </div>
 
     <div class="container__phone__body">
       <div class="list-group list-group-flush" *ngIf="true">
-        <div class="list-group-item list-group-item-action" *ngFor="let item of [3,5]" (click)="gotToChat(item)">
+        <div class="list-group-item list-group-item-action" *ngFor="let user of usersOnline; let i = index">
+          <!-- (click)="gotToChat(item)" -->
           <div class="avatar">
-            <img src="../../assets/avatar{{item}}.png" alt="person">
+            <img src="../../assets/avatar{{i + 1 }}.png" alt="person">
           </div>
           <div class="body">
-            <span>Juan Pérez</span>
-            <span>Hola</span>
+            <span>{{user.nombre}}</span>
+            <!-- <span>Hola</span> -->
           </div>
           <div class="time">
-            <span>07:23 a.m.</span>
+            <!-- <span>07:23 a.m.</span> -->
+            <div></div>
           </div>
         </div>
       </div>
@@ -33,4 +35,8 @@
 
   </div>
 
+</div>
+
+<div class="container-2">
+  <app-chat></app-chat>
 </div>
